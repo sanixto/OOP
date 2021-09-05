@@ -10,7 +10,7 @@
 // Глобальные переменные:
 HINSTANCE hInst;                                // текущий экземпляр
 WCHAR szTitle[MAX_LOADSTRING];                  // Текст строки заголовка
-WCHAR szWindowClass[MAX_LOADSTRING];            // имя класса главного окна
+WCHAR szWindowClass[MAX_LOADSTRING];            // имя класса главного окна 
 
 // Отправить объявления функций, включенных в этот модуль кода:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -133,8 +133,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             // Разобрать выбор в меню:
             switch (wmId)
             {
-            case IDM_WORK1:
-                MyWork(hWnd); // Наш обработчик выбора пункта "Робота"
+            case IDM_WORK1: // Наш обработчик выбора пункта "Робота1"
+                MyWork(hWnd);
                 break;
             case IDM_ABOUT:
                 DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
@@ -148,10 +148,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
     case WM_PAINT:
-        {
+        {    
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: Добавьте сюда любой код прорисовки, использующий HDC...
+
             EndPaint(hWnd, &ps);
         }
         break;
@@ -184,8 +184,11 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
     return (INT_PTR)FALSE;
 }
 
-//функция-обработчик пункта меню "Робота"
 void MyWork(HWND hWnd)
 {
     EnterText_MOD1(hInst, hWnd);
+    HDC hdc = GetDC(hWnd);
+    TextOut(hdc, 500, 300, string_MOD1, strlen(string_MOD1));
+    ReleaseDC(hWnd, hdc);
 }
+
