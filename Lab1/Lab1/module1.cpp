@@ -2,13 +2,13 @@
 #include <math.h>
 #include "module1.h"
 
-//об
+//идентификатор для экспорта
 char string_MOD1[100];
 
 //объявление внутришних функций модуля
 static BOOL CALLBACK  DlgProc_MOD1(HWND, UINT, WPARAM, LPARAM);
 
-//функция для экспорт
+//функция для экспорта
 int EnterText_MOD1(HINSTANCE hInst, HWND hWnd)
 {
     return DialogBox(hInst, MAKEINTRESOURCE(IDD_DIALOG_MOD1), hWnd, DlgProc_MOD1);
@@ -19,13 +19,10 @@ BOOL CALLBACK DlgProc_MOD1(HWND hDlg, UINT iMessage, WPARAM wParam, LPARAM lPara
 {
     switch (iMessage)
     {
-    case WM_INITDIALOG:
-        //. . . ініціалізуємо елементи вікна діалогу (якщо потрібно)
-        break;
     case WM_COMMAND:
         if (LOWORD(wParam) == IDOK)
         {
-            //. . . зчитуємо вміст елеменітів вікна (якщо потрібно)
+            //считуем строку из поля для ввода
             GetDlgItemText(hDlg, IDC_EDIT_MOD1, string_MOD1, 100);
 
             EndDialog(hDlg, 1);

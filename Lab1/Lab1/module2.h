@@ -2,9 +2,13 @@
 // Включаемый файл, созданный в Microsoft Visual C++.
 // Используется module2.rc
 //
-#define IDD_DIALOG_MOD2                 101
+#define IDD_DIALOG_MOD2                 109
 #define IDC_SCROLLBAR_MOD2              1001
 #define IDC_STATIC_MOD2                 1002
+
+extern int nScroll;
+
+extern int ToShowDialog_MOD2(HINSTANCE hInst, HWND hWnd);
 
 // Next default values for new objects
 // 

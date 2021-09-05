@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "Lab1.h"
 #include "module1.h"
+#include "module2.h"
 
 #define MAX_LOADSTRING 100
 
@@ -18,6 +19,7 @@ BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 void Work1(HWND hWnd); // объявление нашей функции
+void Work2(HWND hWnd); //
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -136,6 +138,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             case IDM_WORK1: // Наш обработчик выбора пункта "Робота1"
                 Work1(hWnd);
                 break;
+            case IDM_WORK2: // Наш обработчик выбора пункта "Робота2"
+                Work2(hWnd);
+                break;
             case IDM_ABOUT:
                 DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
                 break;
@@ -190,5 +195,9 @@ void Work1(HWND hWnd)
     HDC hdc = GetDC(hWnd);
     TextOut(hdc, 500, 300, string_MOD1, strlen(string_MOD1));
     ReleaseDC(hWnd, hdc);
+}
+
+void Work2(HWND hWnd) {
+    ToShowDialog_MOD2(hInst, hWnd);
 }
 
