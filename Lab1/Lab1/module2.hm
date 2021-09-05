@@ -1,0 +1,4 @@
+// Microsoft Visual C++ generated Help ID include file.
+// Used by module2.rc
+//
+#define HIDC_SCROLLBAR_MOD2             0x806d03e9    // IDD_DIALOG_MOD2 [Русский (Россия)]

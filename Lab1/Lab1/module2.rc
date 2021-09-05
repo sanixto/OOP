@@ -2,6 +2,11 @@
 //
 #include "module2.h"
 
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "module2.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -57,8 +62,7 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "Так",IDOK,141,81,50,14
     PUSHBUTTON      "Відміна",IDCANCEL,198,81,50,14
-    SCROLLBAR       IDC_SCROLLBAR_MOD2,31,38,183,19
-    LTEXT           "0",IDC_STATIC_MOD2,119,23,8,8
+    SCROLLBAR       IDC_SCROLLBAR_MOD2,31,38,183,19,0,0,HIDC_SCROLLBAR_MOD2
 END
 
 

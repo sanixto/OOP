@@ -3,7 +3,10 @@
 #include <math.h>
 
 //идентификатор для экспорта
-int nScroll;
+char result_MOD2[4];
+
+//объявление внутришних идентификаторов
+static int pos = 1;
 
 //объявление внутришних функций модуля
 static BOOL CALLBACK DlgProc_MOD2(HWND, UINT, WPARAM, LPARAM);
@@ -15,16 +18,41 @@ int ToShowDialog_MOD2(HINSTANCE hInst, HWND hWnd)
 }
 
 //внутрешняя функция диалогового окна
-BOOL CALLBACK DlgProc_MOD2(HWND hDlg, UINT iMessage, WPARAM wParam, LPARAM lParam)
+static BOOL CALLBACK DlgProc_MOD2(HWND hDlg, UINT iMessage, WPARAM wParam, LPARAM)
 {
+    HWND hWndScroll = GetDlgItem(hDlg, IDC_SCROLLBAR_MOD2);
+
     switch (iMessage)
     {
-    case WM_COMMAND:
-        if (LOWORD(wParam) == IDOK)
+    case WM_INITDIALOG:
+        SetScrollRange(hWndScroll, SB_CTL, 1, 100, TRUE);
+        break;
+    case WM_HSCROLL:
+        //pos = GetScrollInfo(GetDlgItem(hDlg, IDC_SCROLLBAR_MOD2), SB_CTL, SIF_TRACKPOS);
+        pos = GetScrollPos(hWndScroll, SB_CTL);
+        switch (LOWORD(wParam))
         {
-
-            EndDialog(hDlg, 1);
+        case SB_LINELEFT: //натиснуто кнопку ліворуч
+            pos--;
             break;
+        case SB_LINERIGHT: //натиснуто кнопку праворуч
+            pos++;
+            break;
+        case SB_THUMBPOSITION: //фіксована позиція повзуна
+        case SB_THUMBTRACK: //поточна позиція повзуна
+            pos = HIWORD(wParam);
+            break;
+        default: break;
+        }
+        //... потрібний код
+        SetScrollPos(hWndScroll, SB_CTL, pos, TRUE); //фіксація повзуна
+        //... потрібний код
+        break;
+        //...
+    case WM_COMMAND:
+        if (LOWORD(wParam) == IDOK) {
+            _itoa_s(pos, result_MOD2, 10); // переводим число pos в строку result_MOD2
+            EndDialog(hDlg, 1);
         }
         if (LOWORD(wParam) == IDCANCEL) EndDialog(hDlg, 0);
         break;

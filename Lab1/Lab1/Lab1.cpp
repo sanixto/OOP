@@ -199,5 +199,11 @@ void Work1(HWND hWnd)
 
 void Work2(HWND hWnd) {
     ToShowDialog_MOD2(hInst, hWnd);
+    if (result_MOD2)
+    {
+        HDC hdc = GetDC(hWnd);
+        TextOut(hdc, 500, 300, result_MOD2, strlen(result_MOD2));
+        ReleaseDC(hWnd, hdc);
+    }
 }
 

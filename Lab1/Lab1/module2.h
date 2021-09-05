@@ -3,10 +3,10 @@
 // Используется module2.rc
 //
 #define IDD_DIALOG_MOD2                 109
-#define IDC_SCROLLBAR_MOD2              1001
+#define IDC_SCROLLBAR_MOD2              1005
 #define IDC_STATIC_MOD2                 1002
 
-extern int nScroll;
+extern char result_MOD2[4];
 
 extern int ToShowDialog_MOD2(HINSTANCE hInst, HWND hWnd);
 
