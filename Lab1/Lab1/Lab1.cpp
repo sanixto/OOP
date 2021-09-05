@@ -3,6 +3,7 @@
 
 #include "framework.h"
 #include "Lab1.h"
+#include "module1.h"
 
 #define MAX_LOADSTRING 100
 
@@ -132,7 +133,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             // Разобрать выбор в меню:
             switch (wmId)
             {
-            case IDM_WORK:
+            case IDM_WORK1:
                 MyWork(hWnd); // Наш обработчик выбора пункта "Робота"
                 break;
             case IDM_ABOUT:
@@ -186,5 +187,5 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 //функция-обработчик пункта меню "Робота"
 void MyWork(HWND hWnd)
 {
-
+    EnterText_MOD1(hInst, hWnd);
 }
