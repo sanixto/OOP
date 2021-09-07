@@ -9,7 +9,7 @@ char string_MOD1[100];
 static BOOL CALLBACK  DlgProc_MOD1(HWND, UINT, WPARAM, LPARAM);
 
 //функция для экспорта
-int EnterText_MOD1(HINSTANCE hInst, HWND hWnd)
+int ToShowDialog_MOD1(HINSTANCE hInst, HWND hWnd)
 {
     return DialogBox(hInst, MAKEINTRESOURCE(IDD_DIALOG_MOD1), hWnd, DlgProc_MOD1);
 }

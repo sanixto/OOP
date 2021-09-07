@@ -191,7 +191,7 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 
 void Work1(HWND hWnd)
 {
-    EnterText_MOD1(hInst, hWnd);
+    ToShowDialog_MOD1(hInst, hWnd);
     HDC hdc = GetDC(hWnd);
     TextOut(hdc, 500, 300, string_MOD1, strlen(string_MOD1));
     ReleaseDC(hWnd, hdc);

@@ -9,7 +9,7 @@
 
 extern char string_MOD1[100];
 
-extern int EnterText_MOD1(HINSTANCE hInst, HWND hWnd);
+extern int ToShowDialog_MOD1(HINSTANCE hInst, HWND hWnd);
 
 // Next default values for new objects
 // 
