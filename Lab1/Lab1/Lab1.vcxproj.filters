@@ -49,10 +49,10 @@
     <ResourceCompile Include="Lab1.rc">
       <Filter>Файлы ресурсов</Filter>
     </ResourceCompile>
-    <ResourceCompile Include="module1.rc">
+    <ResourceCompile Include="module2.rc">
       <Filter>Файлы ресурсов</Filter>
     </ResourceCompile>
-    <ResourceCompile Include="module2.rc">
+    <ResourceCompile Include="module1.rc">
       <Filter>Файлы ресурсов</Filter>
     </ResourceCompile>
   </ItemGroup>

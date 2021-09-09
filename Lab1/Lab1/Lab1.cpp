@@ -126,7 +126,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
+{ 
+
     switch (message)
     {
     case WM_COMMAND:
@@ -156,7 +157,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         {    
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
-
+            TextOut(hdc, 500, 300, string_MOD1, strlen(string_MOD1));//выводим введенную строку
+            
+            TextOut(hdc, 700, 300, result_MOD2, strlen(result_MOD2));//выводим значение Scroll
+            
             EndPaint(hWnd, &ps);
         }
         break;
@@ -192,18 +196,11 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 void Work1(HWND hWnd)
 {
     ToShowDialog_MOD1(hInst, hWnd);
-    HDC hdc = GetDC(hWnd);
-    TextOut(hdc, 500, 300, string_MOD1, strlen(string_MOD1));
-    ReleaseDC(hWnd, hdc);
+    InvalidateRect(hWnd, NULL, TRUE);
 }
 
 void Work2(HWND hWnd) {
     ToShowDialog_MOD2(hInst, hWnd);
-    if (result_MOD2)
-    {
-        HDC hdc = GetDC(hWnd);
-        TextOut(hdc, 500, 300, result_MOD2, strlen(result_MOD2));
-        ReleaseDC(hWnd, hdc);
-    }
+    InvalidateRect(hWnd, NULL, TRUE);
 }
 
