@@ -1,6 +1,6 @@
 // Microsoft Visual C++ generated resource script.
 //
-#include "module2.h"
+#include "resource2.h"
 
 // Generated Help ID header file
 #define APSTUDIO_HIDDEN_SYMBOLS
@@ -32,7 +32,7 @@ LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
 
 1 TEXTINCLUDE 
 BEGIN
-    "module2.h\0"
+    "resource2.h\0"
 END
 
 2 TEXTINCLUDE 

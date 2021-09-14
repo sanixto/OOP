@@ -1,6 +1,5 @@
 #include "framework.h"
-#include <math.h>
-#include "module1.h"
+#include "resource1.h"
 
 //идентификатор для экспорта
 char string_MOD1[100];

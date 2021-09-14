@@ -1,6 +1,5 @@
 #include "framework.h"
-#include "module2.h"
-#include <math.h>
+#include "resource2.h"
 
 //идентификатор для экспорта
 char result_MOD2[4];
